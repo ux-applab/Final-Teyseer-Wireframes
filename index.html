@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teyseer Wireframes — Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#2A3C8E;--blue-dark:#1F2D6B;--sky-soft:#DCE5F2;
+  --night:#2A2A2A;--white:#F4F3EF;--paper:#FFFFFF;
+  --line:#DAD8D0;--muted:#5C5C66;--steel:#A6A8BA;
+  --font:'IBM Plex Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{overflow-x:hidden}
+body{font-family:var(--font);background:var(--white);color:var(--night);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* MAIN */
+main{max-width:1120px;margin:0 auto;padding:64px 40px 80px}
+
+/* HEADER */
+.idx-header{display:flex;align-items:center;gap:24px;margin-bottom:48px}
+.logo-img{width:180px;height:auto;object-fit:contain;display:block}
+h1{font-size:clamp(18px,2vw,26px);font-weight:700;color:var(--blue-dark);letter-spacing:-0.01em}
+
+/* BATCH */
+.batch{margin-bottom:52px}
+.batch-title{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--steel);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+
+/* PAGE GRID */
+.pages-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.page-item a{display:block;padding:11px 0;font-size:14px;font-weight:500;color:var(--night);letter-spacing:0.01em;transition:color .16s;border-bottom:none}
+.page-item a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.new-badge{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.12em;color:#fff;background:var(--blue);padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:middle;line-height:1.4}
+
+/* REFERENCES — different UI */
+.ref-batch{background:var(--blue-dark);padding:32px 40px;border-radius:3px;margin-top:8px}
+.ref-batch .batch-title{color:rgba(255,255,255,0.4);border-bottom-color:rgba(255,255,255,0.1)}
+.ref-batch .page-item a{color:rgba(255,255,255,0.75)}
+.ref-batch .page-item a:hover{color:#fff}
+
+footer{border-top:1px solid var(--line);padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--paper)}
+.ft-l{display:flex;align-items:center;gap:10px}
+.ft-logo{width:24px;height:24px;object-fit:contain}
+.ft-name{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--night)}
+.ft-copy{font-family:var(--mono);font-size:10px;color:var(--steel)}
+
+@media(max-width:700px){.pages-grid{grid-template-columns:1fr}main{padding:40px 20px}}
+</style>
+</head>
+<body>
+
+<main>
+  <div class="idx-header">
+    <img class="logo-img" src="img/teyseer-logo-full.png" alt="Teyseer Group" />
+    <h1>Teyseer Wireframes — Final</h1>
+  </div>
+
+  <!-- ABOUT US -->
+  <div class="batch">
+    <div class="batch-title">About Us</div>
+    <div class="pages-grid">
+      <div class="page-item"><a href="About Us.html" target="_blank">About Us</a></div>
+      <div class="page-item"><a href="History.html" target="_blank">History</a></div>
+      <div class="page-item"><a href="Vision and Mission.html" target="_blank">Vision and Mission</a></div>
+      <div class="page-item"><a href="Partners.html" target="_blank">Our Partners</a></div>
+      <div class="page-item"><a href="Portfolio.html" target="_blank">Our Portfolio <span class="new-badge">NEW</span></a></div>
+      <div class="page-item"><a href="Chairman.html" target="_blank">Chairman's Message</a></div>
+      <div class="page-item"><a href="Awards.html" target="_blank">Awards and Certifications</a></div>
+      <div class="page-item"><a href="QNV.html" target="_blank">QNV 2030 <span class="new-badge">NEW</span></a></div>
+      <div class="page-item"><a href="Sustainability.html" target="_blank">Sustainability <span class="new-badge">NEW</span></a></div>
+    </div>
+  </div>
+
+  <!-- CAREERS -->
+  <div class="batch">
+    <div class="batch-title">Careers</div>
+    <div class="pages-grid">
+      <div class="page-item"><a href="Careers Landing.html" target="_blank">Careers <span class="new-badge">NEW</span></a></div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div class="batch">
+    <div class="batch-title">News</div>
+    <div class="pages-grid">
+      <div class="page-item"><a href="Newsroom.html" target="_blank">Newsroom</a></div>
+      <div class="page-item"><a href="News Article.html" target="_blank">News Article</a></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="batch">
+    <div class="batch-title">Contact</div>
+    <div class="pages-grid">
+      <div class="page-item"><a href="Contact Us.html" target="_blank">Contact Us</a></div>
+      <div class="page-item"><a href="Our Locations.html" target="_blank">Our Locations</a></div>
+    </div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="ref-batch">
+    <div class="batch-title">References</div>
+    <div class="pages-grid">
+      <div class="page-item"><a href="Benchmarks.html" target="_blank">Benchmarks</a></div>
+      <div class="page-item"><a href="Content Provenance.html" target="_blank">Content Provenance</a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="ft-l">
+    <img class="ft-logo" src="img/teyseer-logo-full.png" alt="Teyseer" />
+    <span class="ft-name">Teyseer Group</span>
+  </div>
+  <span class="ft-copy">Applab Qatar · 2026 · All pages open in new tab</span>
+</footer>
+
+</body>
+</html>
