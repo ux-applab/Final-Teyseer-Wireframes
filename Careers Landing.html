@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Careers — Teyseer Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#2A3C8E;--blue-dark:#1F2D6B;--sky-soft:#DCE5F2;--sky:#B6C9E6;--night:#2A2A2A;--white:#F4F3EF;--paper:#FFFFFF;--line:#DAD8D0;--line-soft:#E8E6DF;--muted:#5C5C66;--steel:#A6A8BA;--font:"Cabin",system-ui,sans-serif;--mono:"JetBrains Mono",monospace}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--white);color:var(--night);-webkit-font-smoothing:antialiased;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.eye::before{content:"";width:10px;height:10px;background:var(--blue);transform:rotate(45deg);flex-shrink:0}
+.sec-h2{font-size:clamp(24px,2.6vw,38px);font-weight:700;color:var(--blue-dark);line-height:1.15;margin-bottom:10px}
+.sec-sub{font-size:15px;color:var(--muted);max-width:54ch;line-height:1.7}
+.divider{width:100%;height:1px;background:var(--line);margin-bottom:36px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}.rd4{transition-delay:.32s}
+
+/* HERO */
+.hero{background:var(--blue);position:relative;overflow:hidden;padding:56px 0 52px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;position:relative;z-index:1}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:18px}}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:560px;height:560px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Crect x='165' y='165' width='150' height='150' transform='rotate(45 240 240)' fill='none' stroke='white' stroke-opacity='0.1' stroke-width='1.5'/%3E%3Crect x='105' y='105' width='270' height='270' transform='rotate(45 240 240)' fill='none' stroke='white' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E") no-repeat center;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero-eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:18px}
+.hero-h1{font-size:clamp(40px,5vw,72px);font-weight:700;color:#fff;letter-spacing:-0.02em;line-height:1.02;margin-bottom:20px}
+.hero-h1 em{font-style:italic;color:rgba(255,255,255,0.65)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);max-width:52ch;line-height:1.7;align-self:end;padding-bottom:6px;margin:0}
+.hero-cta-strip{background:var(--paper);border-bottom:1px solid var(--line)}
+.hero-cta-strip .wrap{display:flex;gap:12px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-w{padding:13px 26px;background:#fff;color:var(--blue);font-size:13px;font-weight:700;border-radius:3px;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.btn-w:hover{background:var(--sky-soft)}
+.btn-g{padding:13px 26px;border:1.5px solid rgba(255,255,255,0.35);color:#fff;font-size:13px;font-weight:600;border-radius:3px;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-g:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.08)}
+/* hero right: culture quick-view */
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.hc-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:20px 24px;display:flex;align-items:center;gap:16px;transition:background .2s}
+.hc-card:hover{background:rgba(255,255,255,0.14)}
+.hc-icon{width:44px;height:44px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px}
+.hc-label{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.hc-sub{font-size:12px;color:rgba(255,255,255,0.55)}
+
+/* STATS */
+.stats-bar{background:var(--blue-dark)}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-tile{padding:36px 28px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.stat-tile:last-child{border-right:none}
+.stat-n{font-size:clamp(36px,4vw,56px);font-weight:700;color:#fff;line-height:1}
+.stat-l{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px}
+
+/* INSIDE TEYSEER */
+.inside-sec{background:var(--paper);padding:80px 0;overflow:hidden}
+.inside-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:560px;border:1px solid var(--line)}
+.inside-img{background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);position:relative;display:flex;align-items:flex-end;padding:32px}
+.inside-img-label{font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:0.12em;text-transform:uppercase}
+.inside-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
+.inside-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+.ins-stat{background:var(--white);padding:18px 20px}
+.ins-n{font-size:24px;font-weight:700;color:var(--blue);line-height:1}
+.ins-l{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-top:4px}
+.inside-cta{margin-top:28px;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;border-radius:3px;transition:background .2s}
+.inside-cta:hover{background:var(--blue-dark)}
+
+/* FIND YOUR PATH */
+.path-sec{background:var(--white);padding:80px 0}
+.path-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.path-card{background:var(--paper);padding:36px 28px;display:flex;flex-direction:column;transition:background .2s}
+.path-card:hover{background:var(--sky-soft)}
+.path-icon{font-size:32px;margin-bottom:16px}
+.path-name{font-size:17px;font-weight:700;color:var(--blue-dark);margin-bottom:8px}
+.path-desc{font-size:13.5px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:18px}
+.path-pill{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);padding:3px 8px;background:var(--sky-soft);border-radius:2px;align-self:flex-start}
+
+/* RECOGNITION */
+.recog-sec{background:var(--paper);padding:80px 0;border-top:1px solid var(--line)}
+.recog-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:40px;max-width:800px}
+.recog-card{background:var(--paper);padding:40px 44px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.recog-badge{width:130px;height:56px;background:var(--sky-soft);display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.recog-badge span{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);text-align:center;padding:4px}
+.recog-title{font-size:15px;font-weight:700;color:var(--blue-dark)}
+.recog-sub{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--steel);text-transform:uppercase}
+.recog-link{font-size:12px;font-weight:600;color:var(--blue)}
+.recog-stars{font-size:26px;color:#f59e0b;letter-spacing:2px}
+.recog-score{font-size:22px;font-weight:700;color:var(--blue-dark)}
+
+/* HEAR FROM TEAM */
+.team-sec{background:var(--blue-dark);padding:80px 0}
+.team-eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.team-eye::before{content:"";width:10px;height:10px;background:rgba(255,255,255,.3);transform:rotate(45deg);display:inline-block}
+.team-h2{font-size:clamp(22px,2.4vw,34px);font-weight:700;color:#fff;margin-bottom:10px}
+.team-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:48ch;line-height:1.7;margin-bottom:44px}
+.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.08)}
+.quote-card{background:rgba(255,255,255,.04);padding:32px 28px;display:flex;flex-direction:column}
+.q-avatar{width:52px;height:52px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.5);margin-bottom:16px}
+.q-text{font-size:14.5px;color:rgba(255,255,255,.85);line-height:1.7;font-style:italic;flex:1;margin-bottom:16px}
+.q-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.q-role{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.q-pill{font-family:var(--mono);font-size:9px;padding:3px 8px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);margin-top:8px;display:inline-block}
+
+/* END CTA */
+.end-cta{background:var(--blue);padding:80px 0}
+.ec-h2{font-size:clamp(24px,2.8vw,42px);font-weight:700;color:#fff;letter-spacing:-0.01em;margin-bottom:14px}
+.ec-sub{font-size:15px;color:rgba(255,255,255,.65);max-width:48ch;line-height:1.7;margin-bottom:36px}
+.ec-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* TALENT POOL */
+.talent-sec{background:var(--blue);padding:72px 0}
+.talent-eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.talent-eye::before{content:"";width:10px;height:10px;background:rgba(255,255,255,0.35);transform:rotate(45deg);display:inline-block;flex-shrink:0}
+.talent-h2{font-size:clamp(22px,2.4vw,34px);font-weight:700;color:#fff;margin-bottom:10px}
+.talent-sub{font-size:15px;color:rgba(255,255,255,0.65);max-width:52ch;line-height:1.7;margin-bottom:40px}
+.talent-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:800px}
+.talent-form .full{grid-column:1/-1}
+.form-input{width:100%;padding:13px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:14px;font-family:var(--font);outline:none;transition:border 0.2s;border-radius:0}
+.form-input::placeholder{color:rgba(255,255,255,0.4)}
+.form-input:focus{border-color:rgba(255,255,255,0.6)}
+.form-input option{color:var(--night);background:#fff}
+.drop-zone{width:100%;padding:28px;border:1.5px dashed rgba(255,255,255,0.25);display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:border 0.2s;background:rgba(255,255,255,0.04)}
+.drop-zone:hover{border-color:rgba(255,255,255,0.6)}
+.drop-zone svg{width:32px;height:32px;stroke:rgba(255,255,255,0.45);fill:none;stroke-width:1.5}
+.drop-zone span{font-size:13px;color:rgba(255,255,255,0.5)}
+.form-submit{margin-top:4px;padding:13px 28px;background:#fff;color:var(--blue);font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:var(--font);border-radius:3px;transition:background 0.2s}
+.form-submit:hover{background:var(--sky-soft)}
+
+/* FOOTER CTA BAND */
+#cta{background:linear-gradient(135deg,#e4eaf6 0%,#d0d9ef 100%)}
+.cta-in{max-width:1320px;margin:0 auto;padding:52px 40px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.cta-h2{font-size:clamp(20px,2vw,30px);font-weight:700;color:var(--blue-dark);max-width:36ch;line-height:1.25;margin:0}
+.cta-btns{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.cta-btn-pri{padding:13px 26px;background:var(--blue-dark);color:#fff;font-size:13px;font-weight:700;border-radius:3px}
+.cta-btn-sec{font-size:13px;font-weight:600;color:var(--blue-dark);opacity:.75}
+header nav a,header nav button,header button{pointer-events:none!important;cursor:default!important;background:transparent!important;border-radius:0!important;box-shadow:none!important}
+header nav,header nav *{background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;border:none!important;position:static!important}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header style="background:#2A3C8E;padding:0 40px;display:block">
+  <div style="max-width:1320px;margin:0 auto;height:68px;display:flex;align-items:center;gap:40px">
+    <img src="img/teyseer-logo-full.png" alt="Teyseer Holding W.L.L." style="height:42px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);flex-shrink:0" />
+    <nav style="display:flex;align-items:center;gap:4px;margin-left:auto;flex-shrink:0">
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">Home</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">About Us <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">Group Companies <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">Teyseer Verticals <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">News</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">Contact Us</a>
+    </nav>
+    <div style="display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;flex-shrink:0">
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 14px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap">
+        <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l3 3"/></svg>Search
+      </button>
+      <div style="width:1px;height:18px;background:rgba(255,255,255,0.25)"></div>
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 14px;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>En
+      </button>
+      <div style="width:1px;height:18px;background:rgba(255,255,255,0.25)"></div>
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 12px;display:inline-flex;align-items:center;font-family:system-ui,sans-serif">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2"/><path d="M12 7v5m0 0l-4 5m4-5l4 5M8 12H5m14 0h-3"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="hero-h1">Build Something <em>Lasting</em> in Qatar.</h1>
+    <p class="hero-sub">Join 10,000+ professionals across 18 companies and five sectors — shaping Qatar's future for over 50 years.</p>
+  </div>
+</section>
+<div class="hero-cta-strip" style="display:none">
+  <div class="wrap">
+    <a class="btn-w" href="Roles.html" style="background:var(--blue);color:#fff">Explore Roles →</a>
+    <a class="btn-g" href="Talent Community.html" style="border-color:var(--blue);color:var(--blue)">Join Talent Community →</a>
+  </div>
+</div>
+
+<!-- 2. STATS ROW -->
+<div style="background:var(--blue-dark)">
+  <div class="stats-in" style="max-width:1320px;margin:0 auto">
+    <div class="stat-tile reveal"><div class="stat-n">10,000+</div><div class="stat-l">Employees</div></div>
+    <div class="stat-tile reveal rd1"><div class="stat-n" style="font-size:clamp(18px,2vw,26px);margin-top:6px">Multinational</div><div class="stat-l">Workforce</div></div>
+    <div class="stat-tile reveal rd2"><div class="stat-n">4.5/5</div><div class="stat-l">Glassdoor Rating</div></div>
+    <div class="stat-tile reveal rd3" style="padding:16px 20px;display:flex;align-items:center;justify-content:center"><img src="img/gptw-badge.png" alt="Great Place to Work Certified" style="height:72px;width:auto;object-fit:contain" /></div>
+  </div>
+</div>
+
+<!-- 2b. INTRODUCTION -->
+<section style="background:var(--paper);padding:72px 0">
+  <div class="wrap">
+    <div class="eye reveal" style="margin-bottom:18px">Why Teyseer</div>
+    <p class="reveal" style="font-size:clamp(20px,2.3vw,30px);font-weight:600;color:var(--blue-dark);line-height:1.45;letter-spacing:-0.01em;margin:0">
+      For more than fifty years, Teyseer Group has built careers the same way it has built Qatar — patiently, and to last. A career here means joining 18 specialist companies across five sectors, working with the world's leading brands, and growing within one of the nation's most trusted Qatari groups.
+    </p>
+    <p class="reveal" style="font-size:18px;color:var(--muted);line-height:1.85;margin-top:28px;max-width:70ch">
+      From automotive engineering and enterprise IT to construction, manufacturing and facility management, our people are given the training, mobility and responsibility to do their best work — and the stability of a group that has never stopped investing in its talent.
+    </p>
+  </div>
+</section>
+
+<!-- 3. INSIDE TEYSEER -->
+<section class="inside-sec" id="inside">
+  <div class="wrap">
+    <div class="eye reveal">Inside Teyseer</div>
+    <h2 class="sec-h2 reveal">A Career That Spans an Entire Country.</h2>
+    <p class="sec-sub reveal">From Doha's showrooms to its server rooms — Teyseer people build Qatar every day.</p>
+    <div class="inside-grid reveal">
+      <div class="inside-img">
+        <span class="inside-img-label">[Photo: Teyseer team in action — placeholder]</span>
+      </div>
+      <div class="inside-content">
+        <div class="eye" style="margin-bottom:12px"><span style="width:10px;height:10px;background:var(--blue);transform:rotate(45deg);display:inline-block"></span> Life at Teyseer</div>
+        <h3 style="font-size:22px;font-weight:700;color:var(--blue-dark);margin-bottom:12px">More Than a Job. A Career.</h3>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Across 18 companies and five sectors, Teyseer offers careers in automotive engineering, enterprise IT, civil construction, industrial manufacturing, and facility management — all within one of Qatar's most respected national groups.</p>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7">Our people stay because they grow. Our graduate programme, structured rotations, and global brand partnerships mean every Teyseer career moves forward.</p>
+        <div class="inside-stats">
+          <div class="ins-stat"><div class="ins-n">18</div><div class="ins-l">Companies</div></div>
+          <div class="ins-stat"><div class="ins-n">9</div><div class="ins-l">Sectors</div></div>
+          <div class="ins-stat"><div class="ins-n">40+</div><div class="ins-l">Locations</div></div>
+          <div class="ins-stat"><div class="ins-n">57</div><div class="ins-l">Years</div></div>
+        </div>
+        <a class="inside-cta" href="https://www.linkedin.com/company/teyseer-group/jobs/" target="_blank" rel="noopener">Explore Open Roles on LinkedIn <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FIND YOUR PATH -->
+<section class="path-sec" id="pathways">
+  <div class="wrap">
+    <div class="eye reveal">Find Your Path</div>
+    <h2 class="sec-h2 reveal">Every Stage. Every Vertical.</h2>
+    <p class="sec-sub reveal">Whether you're beginning your career or bringing decades of expertise — there's a path for you at Teyseer.</p>
+    <div class="path-cards">
+      <div class="path-card reveal">
+        <div class="path-icon">🎓</div>
+        <div class="path-name">Graduate Programme</div>
+        <p class="path-desc">A 2-year structured rotation across multiple Teyseer companies — designed to fast-track talented graduates into leadership roles.</p>
+        <a class="path-pill" href="Roles.html">View Graduate Roles →</a>
+      </div>
+      <div class="path-card reveal rd1">
+        <div class="path-icon">🔬</div>
+        <div class="path-name">Internships</div>
+        <p class="path-desc">3–6 month placements for undergraduates in all five verticals. Real projects, real mentors, real experience at Qatar's leading group.</p>
+        <a class="path-pill" href="Roles.html">View Internships →</a>
+      </div>
+      <div class="path-card reveal rd2">
+        <div class="path-icon">💼</div>
+        <div class="path-name">Expert &amp; Senior Roles</div>
+        <p class="path-desc">Specialist and leadership positions across automotive, IT, contracting, manufacturing, and facility management sectors.</p>
+        <a class="path-pill" href="Roles.html">View Senior Roles →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. HEAR FROM THE TEAM -->
+<section class="team-sec" id="team">
+  <div class="wrap">
+    <div class="team-eye reveal">Our People</div>
+    <h2 class="team-h2 reveal">Hear From the Team.</h2>
+    <p class="team-sub reveal">Real experiences from real Teyseer employees — across different companies, roles, and years of service.</p>
+    <div class="quotes-grid">
+      <div class="quote-card reveal">
+        <div class="q-avatar">PHOTO TBC</div>
+        <p class="q-text">"Teyseer gave me a career, not just a job. Two years into the graduate programme I was leading a team across three showrooms. The growth is real."</p>
+        <div class="q-name">Name TBC</div>
+        <div class="q-role">Operations Manager · 6 Years at Teyseer</div>
+        <span class="q-pill">Automotive</span>
+      </div>
+      <div class="quote-card reveal rd1">
+        <div class="q-avatar">PHOTO TBC</div>
+        <p class="q-text">"Working on enterprise IT for government and energy clients from day one — the scale here is rare. The culture pushed me to grow faster than anywhere else."</p>
+        <div class="q-name">Name TBC</div>
+        <div class="q-role">Solutions Architect · 4 Years at Teyseer</div>
+        <span class="q-pill">Information Technology</span>
+      </div>
+      <div class="quote-card reveal rd2">
+        <div class="q-avatar">PHOTO TBC</div>
+        <p class="q-text">"I joined as an intern and stayed. The projects are genuinely impactful and the leadership here actually listens. You feel invested in, not just employed."</p>
+        <div class="q-name">Name TBC</div>
+        <div class="q-role">Project Engineer · 3 Years at Teyseer</div>
+        <span class="q-pill">Contracting</span>
+      </div>
+    </div>
+    <p style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.35);margin-top:20px;letter-spacing:0.06em">— Testimonials to be supplied by client</p>
+  </div>
+</section>
+
+<!-- 7. TALENT COMMUNITY -->
+<section class="talent-sec" id="talent">
+  <div class="wrap">
+    <div class="talent-eye reveal">Join Our Talent Community</div>
+    <h2 class="talent-h2 reveal">Don't See the Right Role?</h2>
+    <p class="talent-sub reveal">Join Our Talent Community and we'll reach out when the right opportunity arises across our 18 companies.</p>
+    <form class="talent-form reveal" onsubmit="return false">
+      <input class="form-input" type="text" placeholder="Full Name" />
+      <input class="form-input" type="email" placeholder="Email Address" />
+      <input class="form-input" type="tel" placeholder="Phone Number" />
+      <select class="form-input"><option value="" disabled selected>Vertical of Interest</option><option>Automotive</option><option>Information Technology</option><option>Contracting</option><option>Manufacturing &amp; Fabrication</option><option>Building Materials</option><option>Facility Management</option></select>
+      <div class="full">
+        <div class="drop-zone" id="dropZone">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span>Drag &amp; drop your CV here, or click to browse</span>
+          <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.08em">PDF OR DOC · MAX 5MB</span>
+        </div>
+      </div>
+      <div class="full"><button class="form-submit">Submit to Talent Community →</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-in">
+    <h2 class="cta-h2">Ready to Join Qatar's Most Trusted Group?</h2>
+    <div class="cta-btns">
+      <span class="cta-btn-pri" style="cursor:default">Explore Our Verticals →</span>
+      <span class="cta-btn-sec" style="cursor:default">Get to Know Us →</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#2A3C8E;color:#fff;font-family:system-ui,sans-serif;display:block">
+  <div style="max-width:1320px;margin:0 auto;padding:60px 40px 56px;display:flex;align-items:flex-start;gap:0">
+    <div style="flex:0 0 340px;padding-right:40px">
+      <img src="img/teyseer-logo-full.png" alt="Teyseer" style="height:50px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:14px" />
+      <p style="font-size:13px;color:rgba(255,255,255,0.38);line-height:1.7;max-width:240px;margin:0">Building excellence since 1968. A trusted leader in automotive, technology, and national development.</p>
+    </div>
+    <div style="flex:1"></div>
+    <div style="flex:0 0 190px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Company</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">About Us</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Our Companies</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">News</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Careers</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Contact</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 220px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Sectors</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Automotive &amp; Mobility</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Industrial &amp; Construction</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Security &amp; Manpower</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Energy</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Technology &amp; IT</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Infrastructure &amp; Materials</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Hospitality &amp; Facility Management</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 180px">
+      <p style="font-size:14px;font-weight:700;color:#fff;margin:0 0 20px 0">Contact Us</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Request a Quote</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">General Contact Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);margin:0 40px"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:0">
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Copyright</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Privacy Policy</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Terms</a>
+    </div>
+    <span style="font-size:13px;color:rgba(255,255,255,0.32)">Copyright and printing rights 2026. Teyseer Group. All rights reserved</span>
+    <div style="display:flex;gap:8px">
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="20" fill="#2A3C8E"/><text x="6" y="13" font-family="sans-serif" font-size="7" font-weight="bold" fill="white">Careers</text><rect y="20" width="80" height="36" fill="#F4F3EF"/><rect x="4" y="26" width="34" height="22" fill="none" stroke="#2A3C8E" stroke-width="0.8" opacity="0.4"/><rect x="42" y="26" width="34" height="22" fill="none" stroke="#2A3C8E" stroke-width="0.8" opacity="0.4"/></svg></template>
+
+<script>
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} }), {threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

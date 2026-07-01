@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Newsroom — Teyseer Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#2A3C8E;--blue-dark:#1F2D6B;--sky-soft:#DCE5F2;--sky:#B6C9E6;
+  --night:#2A2A2A;--white:#F4F3EF;--paper:#FFFFFF;
+  --line:#DAD8D0;--line-soft:#E8E6DF;--muted:#5C5C66;--steel:#A6A8BA;
+  --font:"Cabin","Gill Sans MT",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--white);color:var(--night);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px}
+.eye::before{content:"";width:10px;height:10px;background:var(--blue);transform:rotate(45deg);flex-shrink:0;display:inline-block}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── HERO ── */
+.hero{background:var(--blue);padding:72px 0 56px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:480px;height:480px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Crect x='155' y='155' width='110' height='110' transform='rotate(45 210 210)' fill='none' stroke='white' stroke-opacity='0.1' stroke-width='1.5'/%3E%3Crect x='95' y='95' width='230' height='230' transform='rotate(45 210 210)' fill='none' stroke='white' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E") no-repeat center;pointer-events:none}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.hero-eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:16px}
+.hero-h1{font-size:clamp(36px,4.5vw,60px);font-weight:700;color:#fff;letter-spacing:-0.02em;line-height:1.05;margin-bottom:14px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);max-width:52ch;line-height:1.7;margin:0;padding-bottom:6px}
+@media(max-width:720px){.hero-in{grid-template-columns:1fr;gap:20px}}
+.hero-actions{display:flex;align-items:center;gap:16px;margin-top:32px;flex-wrap:wrap}
+.rss-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:13px;font-weight:600;border-radius:3px;transition:background 0.2s;cursor:pointer}
+.rss-btn:hover{background:rgba(255,255,255,0.2)}
+.rss-btn svg{width:14px;height:14px;fill:currentColor}
+.press-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#fff;color:var(--blue);font-size:13px;font-weight:700;border-radius:3px;transition:background 0.2s}
+.press-btn:hover{background:var(--sky-soft)}
+
+/* ── FEATURED ── */
+.featured{background:var(--paper);padding:0}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.feat-img{background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.feat-img-label{font-family:var(--mono);font-size:10px;color:var(--steel);letter-spacing:0.14em;text-transform:uppercase}
+.feat-content{padding:56px 52px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
+.feat-chip{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:4px 10px;border-radius:2px;display:inline-flex;margin-bottom:20px;align-self:flex-start}
+.feat-h2{font-size:clamp(22px,2.4vw,32px);font-weight:700;color:var(--blue-dark);line-height:1.2;margin-bottom:14px}
+.feat-excerpt{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:44ch}
+.feat-meta{font-family:var(--mono);font-size:10px;color:var(--steel);letter-spacing:0.1em;margin-bottom:24px;text-transform:uppercase}
+.feat-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-read{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;border-radius:3px;transition:background 0.2s}
+.btn-read:hover{background:var(--blue-dark)}
+.btn-share{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border:1.5px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;border-radius:3px;background:none;cursor:pointer;font-family:var(--font);transition:all 0.2s}
+.btn-share:hover{border-color:var(--blue);color:var(--blue)}
+.btn-dl{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border:1.5px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;border-radius:3px;background:none;cursor:pointer;font-family:var(--font);transition:all 0.2s}
+.btn-dl:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── FILTER BAR ── */
+.filter-top{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
+.filter-top .wrap{display:flex;flex-direction:column;gap:16px}
+.ft-search{display:flex;align-items:center;gap:0;border:1.5px solid var(--line);background:var(--paper);width:100%;transition:border 0.2s}
+.ft-search:focus-within{border-color:var(--blue)}
+.ft-search svg{width:20px;height:20px;stroke:var(--steel);fill:none;stroke-width:2;margin:0 18px;flex-shrink:0}
+.ft-search input{flex:1;border:none;outline:none;font-size:18px;font-family:var(--font);background:transparent;color:var(--night);padding:18px 14px 18px 0}
+.ft-search input::placeholder{color:var(--steel)}
+.ft-clear{background:none;border:none;cursor:pointer;color:var(--steel);padding:0 18px;font-size:22px;line-height:1}
+.ft-clear:hover{color:var(--blue)}
+.ft-controls{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.ft-select{display:flex;flex-direction:column;gap:6px}
+.ft-select span{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+.ft-select select{font-family:var(--font);font-size:14px;font-weight:600;color:var(--blue-dark);background:var(--paper);border:1.5px solid var(--line);padding:11px 38px 11px 14px;cursor:pointer;outline:none;min-width:200px;border-radius:0;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232A3C8E' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.ft-select select:focus{border-color:var(--blue)}
+.ft-meta{margin-left:auto;display:flex;align-items:center;gap:14px;padding-bottom:11px}
+.ft-meta #newsCount{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.ft-meta button{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer}
+.ft-meta button:hover{border-color:var(--blue);background:var(--sky-soft)}
+
+/* ── (legacy filter bar) ── */
+.filter-bar{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0}
+.filter-bar-in{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.filter-pills{display:flex;gap:0}
+.fpill{padding:18px 20px;font-size:13px;font-weight:600;color:var(--muted);border:none;background:none;cursor:pointer;font-family:var(--font);border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap}
+.fpill:hover{color:var(--blue)}
+.fpill-sm{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1.5px solid var(--line);background:none;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.fpill-sm.active,.fpill-sm:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.fpill.active{color:var(--blue);border-bottom-color:var(--blue)}
+.filter-search{display:flex;align-items:center;gap:8px;padding:12px 16px;border:1.5px solid var(--line);background:var(--paper)}
+.filter-search input{border:none;outline:none;font-size:13px;font-family:var(--font);background:transparent;color:var(--night);width:220px}
+.filter-search svg{width:14px;height:14px;stroke:var(--steel);fill:none;flex-shrink:0}
+
+/* ── NEWS GRID ── */
+.news-sec{padding:56px 0}
+/* Editorial news layout */
+.news-stream{display:flex;flex-direction:column;gap:0}
+.news-row{display:grid;gap:0;border-bottom:1px solid var(--line)}
+.news-row.row-hero{grid-template-columns:1fr 1fr;min-height:400px;border-top:1px solid var(--line)}
+.news-row.row-trio{grid-template-columns:1fr 1fr 1fr;border-top:none}
+.news-row.row-duo{grid-template-columns:3fr 2fr;border-top:none}
+.news-row.row-full{grid-template-columns:1fr;border-top:none}
+.news-card{background:var(--paper);display:flex;flex-direction:column;transition:background 0.18s;cursor:default;border-right:1px solid var(--line)}
+.news-card:last-child{border-right:none}
+.news-card:hover{background:var(--sky-soft)}
+.news-card.hidden{display:none}
+/* Hero card: image on top */
+.news-card.is-hero .nc-img{aspect-ratio:16/9;flex-shrink:0}
+.news-card.is-hero .nc-body{padding:28px 32px 24px}
+/* Standard cards */
+.nc-img{background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 12px,var(--paper) 12px,var(--paper) 24px);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.nc-img-lbl{font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:0.12em;text-transform:uppercase}
+.nc-body{padding:22px 24px 20px;flex:1;display:flex;flex-direction:column}
+.nc-chip{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:3px 8px;border-radius:2px;display:inline-flex;margin-bottom:8px;align-self:flex-start}
+.nc-stamp{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--steel);margin-bottom:12px}
+.nc-title{font-size:15px;font-weight:700;color:var(--blue-dark);line-height:1.3;margin-bottom:8px}
+.nc-title.lg{font-size:clamp(18px,1.8vw,24px)}
+.nc-excerpt{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;flex:1}
+.nc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--line-soft);margin-top:auto}
+.nc-date{font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:0.1em;text-transform:uppercase}
+.nc-actions{display:flex;gap:8px}
+.nc-readmore{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;transition:gap 0.2s}
+.nc-readmore:hover{gap:9px}
+.nc-readmore svg{stroke:currentColor}
+.nc-btn{width:28px;height:28px;border:1px solid var(--line);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:2px}
+.nc-btn:hover{border-color:var(--blue);background:var(--sky-soft)}
+.nc-btn svg{width:13px;height:13px;stroke:var(--muted);fill:none;stroke-width:1.8}
+.nc-btn:hover svg{stroke:var(--blue)}
+/* Horizontal card (text only, no image) */
+.news-card.is-text-only .nc-body{padding:28px 32px;justify-content:center}
+.no-results{padding:60px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--steel);text-transform:uppercase;background:var(--paper);border:1px solid var(--line);display:none}
+
+/* ── PRESS RESOURCES ── */
+.press-sec{background:var(--paper);padding:64px 0;border-top:1px solid var(--line)}
+.press-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.press-card{background:var(--paper);padding:32px 28px}
+.press-icon{width:44px;height:44px;background:var(--sky-soft);border:1px solid rgba(42,60,142,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.press-icon svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.6}
+.press-title{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:8px}
+.press-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.press-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--blue);font-family:var(--mono);letter-spacing:0.08em;text-transform:uppercase;border:none!important;background:none!important;padding:0!important;box-shadow:none!important}
+
+/* ── MEDIA CONTACT ── */
+.contact-sec{background:var(--blue-dark);padding:56px 0}
+.contact-in{display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap}
+.contact-eye{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.contact-eye::before{content:"";width:10px;height:10px;background:rgba(255,255,255,0.3);transform:rotate(45deg);display:inline-block}
+.contact-h2{font-size:clamp(20px,2.2vw,30px);font-weight:700;color:#fff;margin-bottom:8px}
+.contact-sub{font-size:15px;color:rgba(255,255,255,0.6);max-width:48ch;line-height:1.65}
+.contact-btns{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0}
+.cbtn-pri{padding:13px 24px;background:#fff;color:var(--blue-dark);font-size:13px;font-weight:700;border-radius:3px}
+.cbtn-sec{padding:13px 24px;border:1.5px solid rgba(255,255,255,0.35);color:#fff;font-size:13px;font-weight:600;border-radius:3px;display:inline-flex;align-items:center;gap:8px}
+
+/* ── CTA ── */
+#cta{background:linear-gradient(135deg,#e4eaf6 0%,#d0d9ef 100%)}
+.cta-in{max-width:1320px;margin:0 auto;padding:52px 40px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.cta-h2{font-size:clamp(20px,2vw,30px);font-weight:700;color:var(--blue-dark);max-width:36ch;line-height:1.25;margin:0}
+.cta-btns{display:flex;align-items:center;gap:20px;flex-shrink:0;flex-wrap:wrap}
+.cta-btn-pri{padding:13px 26px;background:var(--blue-dark);color:#fff;font-size:13px;font-weight:700;border-radius:3px;transition:background 0.2s}
+.cta-btn-pri:hover{background:var(--blue)}
+.cta-btn-sec{font-size:13px;font-weight:600;color:var(--blue-dark);opacity:0.75}
+
+/* ── SHARE SHEET ── */
+.share-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:900;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.share-overlay.open{opacity:1;pointer-events:all}
+.share-sheet{background:var(--paper);width:100%;max-width:540px;border-radius:8px 8px 0 0;padding:28px;transform:translateY(100%);transition:transform 0.3s ease}
+.share-overlay.open .share-sheet{transform:translateY(0)}
+.share-title{font-size:14px;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
+.share-article{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.share-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.share-opt{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:1px solid var(--line);cursor:pointer;transition:background 0.2s;background:var(--paper);border-radius:4px}
+.share-opt:hover{background:var(--sky-soft);border-color:var(--blue)}
+.share-opt svg{width:22px;height:22px;fill:var(--blue)}
+.share-opt span{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+.share-link-row{display:flex;gap:0;margin-bottom:16px}
+.share-link-input{flex:1;padding:10px 14px;border:1.5px solid var(--line);border-right:none;font-size:12px;font-family:var(--mono);background:var(--white);color:var(--night);outline:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.share-copy{padding:10px 16px;background:var(--blue);color:#fff;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--font);border-radius:0;transition:background 0.2s}
+.share-copy:hover{background:var(--blue-dark)}
+.share-close{width:100%;padding:12px;border:1.5px solid var(--line);background:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:var(--font);border-radius:3px;transition:all 0.2s}
+.share-close:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── NAV RESET ── */
+<style id="tg-nav-reset">
+header nav a,header nav button,header button{pointer-events:none!important;cursor:default!important;background:transparent!important;background-color:transparent!important;border-radius:0!important;box-shadow:none!important}
+header nav,header nav *{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;border:none!important;position:static!important}
+</style>
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header style="background:#1a2e5a;padding:0 40px;display:block">
+  <div style="max-width:1320px;margin:0 auto;height:68px;display:flex;align-items:center;gap:40px">
+    <img src="img/teyseer-logo-full.png" alt="Teyseer Holding W.L.L." style="height:42px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);flex-shrink:0" />
+    <nav style="display:flex;align-items:center;gap:4px;margin-left:auto;flex-shrink:0">
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font)">Home</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font);display:inline-flex;align-items:center;gap:4px">About Us <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font);display:inline-flex;align-items:center;gap:4px">Group Companies <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font);display:inline-flex;align-items:center;gap:4px">Teyseer Verticals <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font)">News</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:var(--font)">Contact Us</a>
+    </nav>
+    <div style="display:flex;align-items:center;flex-shrink:0;border-left:1px solid rgba(255,255,255,0.2);padding-left:16px">
+      <button style="background:none;border:none;color:rgba(255,255,255,0.75);padding:8px 10px;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-family:var(--font)"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l3 3"/></svg>Search</button>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.2);margin:0 4px"></div>
+      <button style="background:none;border:none;color:rgba(255,255,255,0.75);padding:8px 10px;display:inline-flex;align-items:center;gap:4px;font-size:13px;font-family:var(--font)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>En</button>
+      <div style="width:1px;height:20px;background:rgba(255,255,255,0.2);margin:0 4px"></div>
+      <button style="background:none;border:none;color:rgba(255,255,255,0.75);padding:8px 10px;display:inline-flex;align-items:center;font-family:var(--font)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2"/><path d="M12 7v5m0 0l-4 5m4-5l4 5M8 12H5m14 0h-3"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <div class="hero-eye reveal">Teyseer Group</div>
+      <h1 class="hero-h1 reveal">Newsroom.</h1>
+    </div>
+    <p class="hero-sub reveal">The latest news, announcements, partnerships, and milestones from Teyseer Group and its 18 companies across Qatar.</p>
+  </div>
+</section>
+
+<!-- FEATURED STORY -->
+<section class="featured" id="featured">
+  <div class="feat-grid reveal">
+    <div class="feat-img"><span class="feat-img-label">[Featured Image Placeholder]</span></div>
+    <div class="feat-content">
+      <span class="feat-chip">Technology</span>
+      <div class="feat-meta" style="margin-bottom:14px">Thursday, 14 May, 2026 · 10:30 AST</div>
+      <h2 class="feat-h2">Teyseer Motors Selects SAP for AI-Driven Digital Transformation</h2>
+      <p class="feat-excerpt">Teyseer Motors has partnered with SAP to implement an integrated dealership management platform covering pre-sales, sales, and aftersales across all brands — with embedded AI capabilities and regional expansion ambitions.</p>
+      <div class="feat-meta">SAP MENA · Channel Post MEA · GEC Newswire · May 2026</div>
+      <div class="feat-actions">
+        <span class="btn-read" style="cursor:default">Read More ↗</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH & FILTERS (above the grid) -->
+<section class="filter-top">
+  <div class="wrap">
+    <div class="ft-search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="newsSearchInput" type="text" placeholder="Search news, announcements, partnerships…" oninput="searchNews(this.value)" />
+      <button class="ft-clear" onclick="document.getElementById('newsSearchInput').value='';searchNews('')" aria-label="Clear">×</button>
+    </div>
+    <div class="ft-controls">
+      <label class="ft-select">
+        <span>Vertical</span>
+        <select onchange="selFilter('vert',this.value)">
+          <option value="all">All Verticals</option>
+          <option value="automotive">Automotive</option>
+          <option value="it">Information Technology</option>
+          <option value="construction">Construction &amp; Building Materials</option>
+          <option value="industry">Industry Products &amp; Safety Equipment</option>
+          <option value="manufacturing">Manufacturing &amp; Fabrication</option>
+          <option value="security">Security Services</option>
+          <option value="hvac">Air Conditioning &amp; HVAC</option>
+          <option value="retail">Retail</option>
+          <option value="catering">Catering &amp; Facility Management</option>
+        </select>
+      </label>
+      <label class="ft-select">
+        <span>Published</span>
+        <select onchange="selFilter('period',this.value)">
+          <option value="all">Any time</option>
+          <optgroup label="Recent">
+            <option value="7">Past week</option>
+            <option value="30">Past month</option>
+            <option value="90">Past 3 months</option>
+            <option value="180">Past 6 months</option>
+          </optgroup>
+          <optgroup label="By year">
+            <option value="year-2026">This year (2026)</option>
+            <option value="year-2025">2025</option>
+            <option value="year-2024">2024</option>
+            <option value="year-2023">2023 &amp; earlier</option>
+          </optgroup>
+        </select>
+      </label>
+      <div class="ft-meta">
+        <span id="newsCount">12 articles</span>
+        <button onclick="resetAllFilters()">Clear All</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS GRID -->
+<section class="news-sec">
+  <div class="wrap">
+    <div class="news-stream" id="newsGrid"></div>
+    <div class="no-results" id="noResults">No articles found — try a different filter or search term</div>
+  </div>
+</section>
+
+<!-- MEDIA CONTACT BAND -->
+<section class="contact-sec">
+  <div class="wrap">
+    <div class="contact-in">
+      <div>
+        <div class="contact-eye reveal">Media &amp; Press</div>
+        <h2 class="contact-h2 reveal">Resources for Journalists</h2>
+        <p class="contact-sub reveal">Everything you need to cover Teyseer Group — brand assets, executive bios, press releases, and media contacts.</p>
+      </div>
+      <div class="contact-btns reveal">
+        <span class="cbtn-pri" style="cursor:default">info@teyseergroup.com</span>
+        <span class="cbtn-sec" style="background:transparent;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 24px;font-size:13px;font-weight:600;border-radius:3px;cursor:pointer;font-family:var(--font);display:inline-flex;align-items:center;gap:8px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Media Kit
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-in">
+    <h2 class="cta-h2">Partner With Teyseer Group.</h2>
+    <div class="cta-btns">
+      <span class="cta-btn-pri" style="cursor:default">Get In Touch →</span>
+      <span class="cta-btn-sec" style="cursor:default">Explore Our Verticals →</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#2A3C8E;color:#fff;font-family:system-ui,sans-serif;display:block">
+  <div style="max-width:1320px;margin:0 auto;padding:60px 40px 56px;display:flex;align-items:flex-start;gap:0">
+    <div style="flex:0 0 340px;padding-right:40px">
+      <img src="img/teyseer-logo-full.png" alt="Teyseer" style="height:50px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:14px" />
+      <p style="font-size:13px;color:rgba(255,255,255,0.38);line-height:1.7;max-width:240px;margin:0">Building excellence since 1968. A trusted leader in automotive, technology, and national development.</p>
+    </div>
+    <div style="flex:1"></div>
+    <div style="flex:0 0 190px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Company</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">About Us</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Our Companies</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">News</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Careers</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Contact</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 220px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Sectors</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Automotive &amp; Mobility</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Industrial &amp; Construction</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Security &amp; Manpower</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Energy</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Technology &amp; IT</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Infrastructure &amp; Materials</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Hospitality &amp; Facility Management</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 180px">
+      <p style="font-size:14px;font-weight:700;color:#fff;margin:0 0 20px 0">Contact Us</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Request a Quote</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">General Contact Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);margin:0 40px"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:0">
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Copyright</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Privacy Policy</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Terms</a>
+    </div>
+    <span style="font-size:13px;color:rgba(255,255,255,0.32)">Copyright and printing rights 2026. Teyseer Group. All rights reserved</span>
+    <div style="display:flex;gap:8px">
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SHARE SHEET -->
+<div class="share-overlay" id="shareOverlay" onclick="closeShare(event)">
+  <div class="share-sheet">
+    <div class="share-title">Share this article</div>
+    <div class="share-article" id="shareTitle"></div>
+    <div class="share-options">
+      <div class="share-opt" style="cursor:default;pointer-events:none;opacity:0.5">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        <span>LinkedIn</span>
+      </div>
+      <div class="share-opt" style="cursor:default;pointer-events:none;opacity:0.5">
+        <svg viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        <span>Twitter/X</span>
+      </div>
+      <div class="share-opt" style="cursor:default;pointer-events:none;opacity:0.5">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>WhatsApp</span>
+      </div>
+      <div class="share-opt" style="cursor:default;pointer-events:none;opacity:0.5">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Email</span>
+      </div>
+    </div>
+    <div class="share-link-row">
+      <input class="share-link-input" id="shareLinkInput" type="text" readonly />
+      <span class="share-copy" id="shareCopyBtn" style="cursor:default;opacity:0.5">Copy Link</span>
+    </div>
+    <button class="share-close" onclick="closeShareBtn()">Close</button>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="20" fill="#2A3C8E"/><text x="6" y="13" font-family="sans-serif" font-size="8" font-weight="bold" fill="white">Newsroom</text><rect y="20" width="80" height="36" fill="#F4F3EF"/><rect x="4" y="26" width="22" height="14" fill="none" stroke="#2A3C8E" stroke-width="0.8" opacity="0.4"/><rect x="30" y="26" width="22" height="14" fill="none" stroke="#2A3C8E" stroke-width="0.8" opacity="0.4"/><rect x="56" y="26" width="20" height="14" fill="none" stroke="#2A3C8E" stroke-width="0.8" opacity="0.4"/></svg></template>
+
+<script>
+// ── NEWS DATA ──
+const NEWS = [
+  {id:1, vert:'automotive', year:'2026', cat:'technology', catLabel:'Technology', date:'May 2026', title:'Teyseer Motors Selects SAP for AI-Driven Digital Transformation', excerpt:'Teyseer Motors has partnered with SAP to implement an integrated dealership management platform covering pre-sales, sales, and aftersales across all brands.', source:'SAP MENA · GEC Newswire', url:'https://gecnewswire.com/teyseer-motors-adopts-sap-to-drive-ai-powered-growth-in-qatar/'},
+  {id:2, vert:'group', year:'2026', cat:'partnership', catLabel:'Partnership', date:'February 2026', title:'Dukhan Bank & Teyseer Group Sign MoU for Integrated Banking & Technology Solutions', excerpt:'A landmark MoU signed at Web Summit Qatar, exploring bundled IT infrastructure and Sharia-compliant financing solutions for SMEs and startups through Computer Arabia.', source:'Gulf Times', url:'https://www.gulf-times.com/article/719811/business/dukhan-bank-teyseer-group-sign-mou-to-explore-integrated-banking-technology-and-financing-solutions-for-smes-startups'},
+  {id:3, vert:'it', year:'2026', cat:'event', catLabel:'Event', date:'February 2026', title:'Teyseer Group at Web Summit Qatar 2026', excerpt:'Teyseer Group represented its IT division at Web Summit Qatar 2026, one of the world\'s largest technology and startup conferences.', source:'Gulf Times', url:'https://www.gulf-times.com/article/719811/business/'},
+  {id:4, vert:'it', year:'2025', cat:'award', catLabel:'Award', date:'2025', title:'Computer Arabia Named Palo Alto Networks Collaboration Champion of the Year 2025', excerpt:'Computer Arabia was recognised as Collaboration Champion of the Year 2025 by Palo Alto Networks — affirming its commitment to cybersecurity excellence in Qatar.', source:'LinkedIn · Palo Alto Networks', url:'https://www.linkedin.com/posts/computer-arabia-wll_%D9%81%D8%AE%D9%88%D8%B1%D9%88%D9%86-%D8%A8%D8%AD%D8%B5%D9%88%D9%84%D9%86%D8%A7-%D8%B9%D9%84%D9%89-%D9%84%D9%82%D8%A8-%D8%A8%D8%B7%D9%84-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D9%84%D8%B9%D8%A7%D9%85-2025-activity-7417563648941993985-w3Tp'},
+  {id:5, vert:'it', year:'2025', cat:'partnership', catLabel:'Partnership', date:'December 2025', title:'Computer Arabia & Solix Technologies Forge Enterprise Data Partnership', excerpt:'Computer Arabia partnered with Solix Technologies to deliver AI-ready data management and enterprise modernisation solutions across Qatar\'s government, telecom, energy, and banking sectors.', source:'Solix Technologies', url:'https://www.solix.com/company/news-events/press-releases/solix-technologies-and-computer-arabia-forge-strategic-partnership-to-accelerate-enterprise-data-modernization-in-qatar/'},
+  {id:6, vert:'automotive', year:'2025', cat:'automotive', catLabel:'Automotive', date:'January 2025', title:'Haval H7 Unveiled at Qatar Custom Show', excerpt:'Teyseer Motors launched the all-new Haval H7 at the Qatar Custom Show, priced at QAR 92,900, expanding the GWM lineup alongside the Tank 500, Tank 300, and Haval H9.', source:'Qatar Tribune', url:'https://www.qatar-tribune.com/article/159592/business/teyseer-motors-unveils-all-new-haval-h7-at-qatar-custom-show'},
+  {id:7, vert:'automotive', year:'2025', cat:'automotive', catLabel:'Automotive', date:'2025', title:'Farizon Commercial EVs Added to Portfolio — Teyseer Enters EV Segment', excerpt:'Teyseer Motors is now the official Qatar distributor for Farizon, a commercial electric vehicle brand — marking a concrete step into the EV segment.', source:'Teyseer Group', url:'#'},
+  {id:8, vert:'automotive', year:'2024', cat:'event', catLabel:'Event', date:'November 2024', title:'GWM Tank 300 Showcased at Milipol Qatar 2024', excerpt:'GWM and Teyseer Motors presented the Tank 300 at Milipol Qatar 2024, targeting the security, defence, and government vehicle segment.', source:'Milipol News', url:'#'},
+  {id:9, vert:'it', year:'2025', cat:'technology', catLabel:'Technology', date:'2025', title:'Computer Arabia Showcases Dell Technologies at MWC25 Doha', excerpt:'Computer Arabia presented Dell Technologies\' latest innovations at Mobile World Congress Qatar, held at the Doha Exhibition and Convention Center.', source:'LinkedIn', url:'https://ae.linkedin.com/posts/computer-arabia-wll_%D9%8A%D9%88%D9%85%D8%A7%D9%86-%D8%B1%D8%A7%D8%A6%D8%B9%D8%A7%D9%86-%D9%81%D9%8A-mwc25-%D8%A5%D9%84%D9%8A%D9%83%D9%85-%D9%86%D8%B8%D8%B1%D8%A9-%D8%B9%D9%84%D9%89-%D8%A3%D8%AC%D9%85%D9%84-activity-7399802355174551553-UEi9'},
+  {id:10, vert:'automotive', year:'2024', cat:'partnership', catLabel:'Partnership', date:'January 2024', title:'GWM Exclusive Distributorship Agreement Signed — Qatar Market Complete', excerpt:'Teyseer Motors formalised a landmark distributorship agreement with Great Wall Motor, completing GWM\'s full GCC six-country market coverage.', source:'Gulf Times · Qatar Tribune', url:'https://www.gulf-times.com/article/676577/qatar/great-wall-motor-and-teyseer-motors-forge-transformative-partnership-redefining-qatars-automotive-experience'},
+  {id:11, vert:'automotive', year:'2024', cat:'automotive', catLabel:'Automotive', date:'July 2024', title:'GWM Flagship Showroom Opens on Airport Road — 200+ Pre-Bookings on Launch Day', excerpt:'Teyseer Motors opened a state-of-the-art GWM showroom in Doha with over 200 vehicles pre-booked on opening day, debuting Tank 500, Tank 300, Haval SUVs, and the Ora 3 EV.', source:'QabayanFM · GWM Global', url:'https://www.gwm-global.com/news/3403395.html'},
+  {id:12, vert:'automotive', year:'2023', cat:'automotive', catLabel:'Automotive', date:'March 2023', title:'Renovated Suzuki Showroom Unveiled Alongside All-New Grand Vitara', excerpt:'Teyseer Motors unveiled its fully renovated Suzuki showroom alongside the all-new Grand Vitara, attended by senior Suzuki Motor Corporation executives.', source:'The Peninsula Qatar', url:'#'},
+];
+
+let currentFilter = 'all';
+const TIMES = {1:'10:30',2:'11:00',3:'09:15',4:'14:00',5:'16:45',6:'12:30',7:'10:00',8:'13:20',9:'15:10',10:'09:45',11:'11:30',12:'14:15'};
+const DATES = {1:'14/05/2026',2:'24/02/2026',3:'23/02/2026',4:'18/11/2025',5:'09/12/2025',6:'22/01/2025',7:'06/05/2025',8:'12/11/2024',9:'26/02/2025',10:'15/01/2024',11:'18/07/2024',12:'20/03/2023'};
+function fmtDate(s){
+  if(!s) return '';
+  const p=s.split('/').map(Number);
+  const dt=new Date(p[2],p[1]-1,p[0]);
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  return days[dt.getDay()]+', '+p[0]+' '+months[p[1]-1]+', '+p[2];
+}
+let currentVert = 'all';
+let currentPeriod = 'all';
+function matchPeriod(n){
+  if(currentPeriod === 'all') return true;
+  const p = (DATES[n.id]||'').split('/').map(Number);
+  if(p.length !== 3) return true;
+  const d = new Date(p[2], p[1]-1, p[0]);
+  if(currentPeriod.indexOf('year-') === 0){
+    const y = +currentPeriod.slice(5);
+    return y === 2023 ? d.getFullYear() <= 2023 : d.getFullYear() === y;
+  }
+  const NOW = new Date(2026, 6, 1); // reference: 01 Jul 2026
+  const days = (NOW - d) / 86400000;
+  return days >= 0 && days <= (+currentPeriod);
+}
+let currentSearch = '';
+
+function cardHtml(n, extraClass, imgHeight) {
+  const img = imgHeight ? `<div class="nc-img" style="height:${imgHeight}px"><span class="nc-img-lbl">[Image Placeholder]</span></div>` : '';
+  const titleClass = extraClass && extraClass.includes('hero') ? 'nc-title lg' : 'nc-title';
+  const t = n.title.replace(/'/g,"&#39;");
+  const u = n.url;
+  return `<div class="news-card ${extraClass||''}">
+    ${img}
+    <div class="nc-body">
+      <span class="nc-chip">${n.catLabel}</span>
+      <div class="nc-stamp">${fmtDate(DATES[n.id])||n.date} · ${TIMES[n.id]||'09:00'} AST</div>
+      <div class="${titleClass}">${n.title}</div>
+      ${extraClass&&extraClass.includes('hero') ? `<div class="nc-excerpt">${n.excerpt}</div>` : `<div class="nc-excerpt" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${n.excerpt}</div>`}
+      <div class="nc-footer">
+        <div class="nc-date">${n.source}</div>
+        <div class="nc-actions">
+          <span class="nc-readmore" style="cursor:default">Read More <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderNews() {
+  const grid = document.getElementById('newsGrid');
+  const noRes = document.getElementById('noResults');
+  const filtered = NEWS.filter(n => {
+    const matchCat = currentFilter === 'all' || n.cat === currentFilter;
+    const matchVert = currentVert === 'all' || n.vert === currentVert;
+    const matchYear = matchPeriod(n);
+    const matchSearch = !currentSearch || n.title.toLowerCase().includes(currentSearch) || n.excerpt.toLowerCase().includes(currentSearch);
+    return matchCat && matchVert && matchYear && matchSearch;
+  });
+  const cEl = document.getElementById('newsCount');
+  if(cEl) cEl.textContent = filtered.length + (filtered.length===1?' article':' articles');
+
+  if (filtered.length === 0) {
+    grid.style.display = 'none';
+    noRes.style.display = 'block';
+    return;
+  }
+  grid.style.display = '';
+  noRes.style.display = 'none';
+
+  let rows = '';
+  // Row 1: hero pair (2 big cards with image)
+  if (filtered[0]) rows += `<div class="news-row row-hero">${cardHtml(filtered[0],'is-hero',260)}${filtered[1] ? cardHtml(filtered[1],'is-hero',260) : ''}</div>`;
+  // Row 2: trio (3 text-only cards)
+  if (filtered[2]) rows += `<div class="news-row row-trio">${[filtered[2],filtered[3],filtered[4]].filter(Boolean).map(n=>cardHtml(n,'is-text-only',0)).join('')}</div>`;
+  // Row 3: duo (wide left with image, narrower right text)
+  if (filtered[5]) rows += `<div class="news-row row-duo">${cardHtml(filtered[5],'is-hero',220)}${filtered[6] ? cardHtml(filtered[6],'is-text-only',0) : ''}</div>`;
+  // Row 4: trio again
+  if (filtered[7]) rows += `<div class="news-row row-trio">${[filtered[7],filtered[8],filtered[9]].filter(Boolean).map(n=>cardHtml(n,'is-text-only',0)).join('')}</div>`;
+  // Remaining as duo
+  if (filtered[10]) rows += `<div class="news-row row-duo">${cardHtml(filtered[10],'is-hero',200)}${filtered[11] ? cardHtml(filtered[11],'is-text-only',0) : ''}</div>`;
+  // Any extras
+  const extras = filtered.slice(12);
+  if (extras.length > 0) rows += `<div class="news-row row-trio">${extras.slice(0,3).map(n=>cardHtml(n,'is-text-only',0)).join('')}</div>`;
+
+  grid.innerHTML = rows;
+}
+
+function setFilter(type, val, btn) {
+  if(type==='cat'){ currentFilter=val; }
+  else if(type==='vert'){ currentVert=val; }
+  else if(type==='period'){ currentPeriod=val; }
+  if(btn){ btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  renderNews();
+}
+function selFilter(type,val){
+  if(type==='cat') currentFilter=val;
+  else if(type==='vert') currentVert=val;
+  else if(type==='period') currentPeriod=val;
+  renderNews();
+}
+function filterNews(cat,btn){ setFilter('cat',cat,btn); }
+function resetAllFilters(){
+  currentFilter='all'; currentVert='all'; currentPeriod='all'; currentSearch='';
+  document.querySelectorAll('.ft-select select').forEach(s=>s.value='all');
+  const si=document.getElementById('newsSearchInput'); if(si) si.value='';
+  renderNews();
+}
+
+function searchNews(val) {
+  currentSearch = val.toLowerCase();
+  renderNews();
+}
+
+// Share sheet
+let currentShareUrl = '';
+function openShare(title, url) {
+  currentShareUrl = url !== '#' ? url : window.location.href;
+  document.getElementById('shareTitle').textContent = title;
+  document.getElementById('shareLinkInput').value = currentShareUrl;
+  document.getElementById('shareCopyBtn').textContent = 'Copy Link';
+  document.getElementById('shareOverlay').classList.add('open');
+}
+function closeShare(e) { if(e.target === document.getElementById('shareOverlay')) closeShareBtn(); }
+function closeShareBtn() { document.getElementById('shareOverlay').classList.remove('open'); }
+function copyLink() {
+  navigator.clipboard.writeText(currentShareUrl).then(() => {
+    document.getElementById('shareCopyBtn').textContent = '✓ Copied!';
+    setTimeout(() => document.getElementById('shareCopyBtn').textContent = 'Copy Link', 2000);
+  }).catch(() => {
+    document.getElementById('shareLinkInput').select();
+    document.execCommand('copy');
+  });
+}
+function shareVia(platform) {
+  const title = document.getElementById('shareTitle').textContent;
+  const url = encodeURIComponent(currentShareUrl);
+  const text = encodeURIComponent(title);
+  const links = {
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+    twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`,
+    whatsapp: `https://wa.me/?text=${text}%20${url}`,
+    email: `mailto:?subject=${text}&body=${text}%0A%0A${currentShareUrl}`
+  };
+  window.open(links[platform], '_blank', 'noopener');
+}
+
+// Download article (PDF-style plain text)
+function downloadArticle(title) {
+  const art = NEWS.find(n => n.title === title);
+  if (!art) return;
+  const content = `TEYSEER GROUP NEWSROOM\n${'='.repeat(60)}\n\n${art.title}\n${'─'.repeat(60)}\nCategory: ${art.catLabel}\nDate: ${art.date}\nSource: ${art.source}\n\n${art.excerpt}\n\n${art.url !== '#' ? 'Full article: ' + art.url : ''}\n\n${'─'.repeat(60)}\n© 2025 Teyseer Holding W.L.L. | info@teyseergroup.com`;
+  const blob = new Blob([content], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Teyseer-' + title.substring(0,40).replace(/[^a-z0-9]/gi,'-') + '.txt';
+  a.click();
+}
+
+// Press kit download
+function downloadPressKit() {
+  const content = `TEYSEER GROUP — PRESS KIT\n${'='.repeat(60)}\n\nTEYSEER HOLDING W.L.L.\nAirport Road, Zone 42, Street 310, Building 172\nDoha, Qatar\n\nMedia Contact: info@teyseergroup.com\nWebsite: teyseergroup.com\nLinkedIn: linkedin.com/company/teyseer-group\n\n${'─'.repeat(60)}\nCOMPANY BOILERPLATE\n${'─'.repeat(60)}\n\nTeyseer Group is one of Qatar's most diversified and established holding companies, founded in 1968. With 18 subsidiaries and over 10,000 employees, the Group operates across five verticals: Automotive, Information Technology, Contracting & Building Materials, Manufacturing & Fabrication, and Facility Management.\n\nTeyseer is the exclusive distributor of Suzuki (since 1970), Peugeot (since 2020), and GWM (since 2024) in Qatar. Through Computer Arabia, it is Qatar's leading IT infrastructure and cybersecurity solutions provider.\n\n${'─'.repeat(60)}\nKEY FACTS\n${'─'.repeat(60)}\nFounded: 1968\nHeadquarters: Doha, Qatar\nEmployees: 10,000+\nSubsidiaries: 18\nIndustry Verticals: 5\nLocations in Qatar: 40+\n\n${'─'.repeat(60)}\n© 2025 Teyseer Holding W.L.L.`;
+  const blob = new Blob([content], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Teyseer-Group-Press-Kit.txt';
+  a.click();
+}
+
+// RSS subscribe (removed)
+
+
+// Reveal on scroll
+const revObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);} }), {threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// Initial render
+renderNews();
+</script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teyseer Motors Selects SAP for AI-Driven Digital Transformation — Teyseer Newsroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#2A3C8E;--blue-dark:#1F2D6B;--sky-soft:#DCE5F2;--sky:#B6C9E6;
+  --night:#2A2A2A;--white:#F4F3EF;--paper:#FFFFFF;
+  --line:#DAD8D0;--line-soft:#E8E6DF;--muted:#5C5C66;--steel:#A6A8BA;
+  --font:"Cabin","Gill Sans MT",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--paper);color:var(--night);-webkit-font-smoothing:antialiased;line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── NAV RESET ── */
+header nav a,header nav button,header button{pointer-events:none!important;cursor:default!important;background:transparent!important;background-color:transparent!important;border-radius:0!important;box-shadow:none!important}
+header nav,header nav *{background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;border:none!important;position:static!important}
+
+/* ── ARTICLE NAV ── */
+.art-nav{background:var(--white);border-bottom:1px solid var(--line);padding:0 40px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.art-nav-in{max-width:900px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between}
+.art-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);cursor:pointer;transition:opacity 0.2s}
+.art-back:hover{opacity:0.7}
+.art-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.art-progress{flex:1;height:2px;background:var(--line);margin:0 24px;border-radius:1px;overflow:hidden}
+.art-progress-fill{height:100%;background:var(--blue);width:0%;transition:width 0.1s linear;border-radius:1px}
+.art-nav-actions{display:flex;gap:8px}
+.art-nav-btn{width:32px;height:32px;border:1.5px solid var(--line);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;border-radius:2px}
+.art-nav-btn:hover{border-color:var(--blue);background:var(--sky-soft)}
+.art-nav-btn svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:1.8}
+.art-nav-btn:hover svg{stroke:var(--blue)}
+
+/* ── ARTICLE HEADER ── */
+.art-header{padding:72px 40px 0;max-width:900px;margin:0 auto}
+.art-breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel);margin-bottom:24px}
+.art-breadcrumb a{color:var(--blue);cursor:pointer}
+.art-breadcrumb span{color:var(--line)}
+.art-cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.art-cat{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:4px 10px;border-radius:2px}
+.art-h1{font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--blue-dark);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
+.art-deck{font-size:clamp(16px,1.5vw,20px);color:var(--muted);line-height:1.65;margin-bottom:28px;max-width:62ch}
+.art-meta-row{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:0;flex-wrap:wrap;gap:16px}
+.art-byline{display:flex;flex-direction:column;gap:3px}
+.art-author{font-size:13px;font-weight:700;color:var(--night)}
+.art-date{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel)}
+.art-actions{display:flex;gap:8px}
+.art-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1.5px solid var(--line);background:none;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all 0.2s;border-radius:2px}
+.art-btn:hover{border-color:var(--blue);color:var(--blue)}
+.art-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+/* ── HERO IMAGE ── */
+.art-hero-img{width:100%;aspect-ratio:16/8;background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);display:flex;align-items:center;justify-content:center;margin:0;position:relative;overflow:hidden}
+.art-hero-img-lbl{font-family:var(--mono);font-size:11px;color:var(--steel);letter-spacing:0.14em;text-transform:uppercase}
+.art-hero-cap{max-width:900px;margin:0 auto;padding:10px 40px 0;font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--steel)}
+
+/* ── ARTICLE BODY ── */
+.art-body{max-width:900px;margin:0 auto;padding:48px 40px 0}
+.art-body p{font-size:16.5px;line-height:1.78;color:var(--night);margin-bottom:24px}
+.art-body h2{font-size:clamp(20px,2vw,26px);font-weight:700;color:var(--blue-dark);margin:44px 0 16px;line-height:1.2}
+.art-body h3{font-size:18px;font-weight:700;color:var(--blue-dark);margin:32px 0 12px}
+.art-body ul{margin:0 0 24px 20px;list-style:none}
+.art-body ul li{font-size:16px;color:var(--night);line-height:1.7;margin-bottom:8px;padding-left:16px;position:relative}
+.art-body ul li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--blue);transform:rotate(45deg)}
+.art-pull{margin:44px 0;padding:32px 40px;border-left:3px solid var(--blue);background:var(--sky-soft)}
+.art-pull blockquote{font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--blue-dark);line-height:1.35;letter-spacing:-0.01em;font-style:italic;margin-bottom:12px}
+.art-pull cite{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel)}
+.art-divider{width:100%;height:1px;background:var(--line);margin:40px 0}
+.art-about{background:var(--white);border:1px solid var(--line);padding:28px 32px;margin:40px 0}
+.art-about-label{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--steel);margin-bottom:10px}
+.art-about p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:0}
+.art-tags{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0}
+.art-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:5px 12px;border-radius:2px;cursor:pointer;transition:all 0.2s}
+.art-tag:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── MEDIA DOWNLOADS ── */
+.art-media{max-width:900px;margin:0 auto;padding:40px 40px 0;border-top:1px solid var(--line)}
+.art-media-title{font-size:18px;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
+.art-media-sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.media-card{border:1px solid var(--line);padding:20px;background:var(--paper);display:flex;flex-direction:column;gap:12px;cursor:default}
+.media-card:hover{border-color:var(--line);background:var(--paper)}
+.media-icon{width:40px;height:40px;background:var(--sky-soft);border:1px solid rgba(42,60,142,0.1);display:flex;align-items:center;justify-content:center}
+.media-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:1.6}
+.media-label{font-size:13px;font-weight:700;color:var(--blue-dark)}
+.media-sub{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel)}
+.media-dl{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:5px;margin-top:auto}
+
+/* ── RELATED ── */
+.art-related{max-width:900px;margin:0 auto;padding:48px 40px;border-top:1px solid var(--line)}
+.rel-label{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;margin-bottom:28px}
+.rel-label::before{content:"";width:10px;height:10px;background:var(--blue);transform:rotate(45deg);flex-shrink:0;display:inline-block}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.rel-card{background:var(--paper);padding:24px;display:flex;flex-direction:column;gap:10px;transition:background 0.2s;cursor:pointer}
+.rel-card:hover{background:var(--sky-soft)}
+.rel-chip{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:3px 8px;border-radius:2px;align-self:flex-start}
+.rel-title{font-size:14px;font-weight:700;color:var(--blue-dark);line-height:1.35}
+.rel-date{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--steel)}
+
+/* ── CTA ── */
+#cta{background:linear-gradient(135deg,#e4eaf6 0%,#d0d9ef 100%)}
+.cta-in{max-width:1320px;margin:0 auto;padding:52px 40px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.cta-h2{font-size:clamp(20px,2vw,30px);font-weight:700;color:var(--blue-dark);max-width:36ch;line-height:1.25;margin:0}
+.cta-btns{display:flex;align-items:center;gap:20px;flex-shrink:0;flex-wrap:wrap}
+.cta-btn-pri{padding:13px 26px;background:var(--blue-dark);color:#fff;font-size:13px;font-weight:700;border-radius:3px;transition:background 0.2s}
+.cta-btn-pri:hover{background:var(--blue)}
+.cta-btn-sec{font-size:13px;font-weight:600;color:var(--blue-dark);opacity:0.75}
+
+/* ── SHARE SHEET ── */
+.share-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:900;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.share-overlay.open{opacity:1;pointer-events:all}
+.share-sheet{background:var(--paper);width:100%;max-width:520px;border-radius:8px 8px 0 0;padding:28px;transform:translateY(100%);transition:transform 0.3s ease}
+.share-overlay.open .share-sheet{transform:translateY(0)}
+.share-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.share-opt{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;border:1px solid var(--line);cursor:pointer;transition:background 0.2s;background:var(--paper);border-radius:4px}
+.share-opt:hover{background:var(--sky-soft);border-color:var(--blue)}
+.share-opt svg{width:22px;height:22px;fill:var(--blue)}
+.share-opt span{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+.share-link-row{display:flex;gap:0;margin-bottom:16px}
+.share-link-input{flex:1;padding:10px 14px;border:1.5px solid var(--line);border-right:none;font-size:12px;font-family:var(--mono);background:var(--white);color:var(--night);outline:none}
+.share-copy{padding:10px 16px;background:var(--blue);color:#fff;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:var(--font)}
+.share-close{width:100%;padding:12px;border:1.5px solid var(--line);background:none;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:var(--font);border-radius:3px}
+.share-close:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header style="background:#2A3C8E;padding:0 40px;display:block">
+  <div style="max-width:1320px;margin:0 auto;height:68px;display:flex;align-items:center;gap:40px">
+    <img src="img/teyseer-logo-full.png" alt="Teyseer Holding W.L.L." style="height:42px;width:auto;object-fit:contain;display:block;filter:brightness(0) invert(1);flex-shrink:0" />
+    <nav style="display:flex;align-items:center;gap:4px;margin-left:auto;flex-shrink:0">
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">Home</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">About Us <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">Group Companies <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;font-family:system-ui,sans-serif">Teyseer Verticals <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="rgba(255,255,255,0.7)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">News</a>
+      <a href="#" style="font-size:13.5px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;white-space:nowrap;font-family:system-ui,sans-serif">Contact Us</a>
+    </nav>
+    <div style="display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;flex-shrink:0">
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 14px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap">
+        <svg width="14" height="14" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4.5"/><path d="M10 10l3 3"/></svg>Search
+      </button>
+      <div style="width:1px;height:18px;background:rgba(255,255,255,0.25)"></div>
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 14px;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>En
+      </button>
+      <div style="width:1px;height:18px;background:rgba(255,255,255,0.25)"></div>
+      <button style="background:transparent!important;border:none!important;cursor:pointer;color:rgba(255,255,255,0.8);padding:7px 12px;display:inline-flex;align-items:center;font-family:system-ui,sans-serif">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2"/><path d="M12 7v5m0 0l-4 5m4-5l4 5M8 12H5m14 0h-3"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="art-header reveal">
+  <div class="art-breadcrumb">
+    <a href="Newsroom.html">Newsroom</a>
+    <span>/</span>
+    <span>Technology</span>
+    <span>/</span>
+    <span>May 2026</span>
+  </div>
+  <div class="art-cats">
+    <span class="art-cat">Technology</span>
+    <span class="art-cat">Automotive</span>
+    <span class="art-cat">Digital Transformation</span>
+  </div>
+  <h1 class="art-h1">Teyseer Motors Selects SAP for AI-Driven Digital Transformation</h1>
+  <p class="art-deck">Teyseer Motors has partnered with SAP to implement an integrated dealership management platform unifying pre-sales, sales, and aftersales across all brands — with embedded AI capabilities and regional expansion ambitions built in from day one.</p>
+  <div class="art-meta-row">
+    <div class="art-byline">
+      <div class="art-author">Teyseer Group Communications</div>
+      <div class="art-date">Thursday, 14 May, 2026 · 4 min read</div>
+    </div>
+    <div class="art-actions">
+      <button class="art-btn" onclick="return false" style="cursor:default">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share
+      </button>
+      <button class="art-btn" onclick="return false" style="cursor:default">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO IMAGE -->
+<div class="art-hero-img reveal">
+  <span class="art-hero-img-lbl">[Hero Image — Teyseer Motors SAP Partnership Signing]</span>
+</div>
+<div class="art-hero-cap reveal">Teyseer Motors executive team at the SAP partnership announcement, Doha · Thursday, 14 May, 2026</div>
+
+<!-- ARTICLE BODY -->
+<article class="art-body">
+
+  <p class="reveal"><strong>Doha, Qatar — May 2026.</strong> Teyseer Motors W.L.L., one of Qatar's leading automotive distributors and a subsidiary of Teyseer Group, has selected SAP to deploy a comprehensive, AI-enabled dealership management platform across its entire brand portfolio.</p>
+
+  <p class="reveal">The implementation will unify all core business functions — from pre-sales enquiries and vehicle configuration to sales contracts, aftersales service, spare parts management, warranty processing, and financial operations — into a single, integrated technology backbone powered by SAP S/4HANA.</p>
+
+  <div class="art-pull reveal">
+    <blockquote>"This partnership with SAP is a defining moment for Teyseer Motors. We are building the infrastructure for the next 30 years — one platform, one truth, every brand, every customer."</blockquote>
+    <cite>— Teyseer Motors Leadership, May 2026</cite>
+  </div>
+
+  <h2 class="reveal">A Single Platform Across All Brands</h2>
+
+  <p class="reveal">Teyseer Motors currently distributes three internationally acclaimed automotive brands in Qatar — Suzuki, Peugeot, and GWM (including the Haval, Tank, and GWM Poer sub-brands) — with Farizon commercial electric vehicles added to the portfolio in 2025.</p>
+
+  <p class="reveal">Each brand has historically operated on separate systems, creating fragmentation across customer records, inventory, service histories, and financial reporting. The SAP implementation will consolidate all of this into a single source of truth — enabling Teyseer Motors' teams to serve customers consistently, regardless of which brand they drive.</p>
+
+  <h2 class="reveal">Embedded AI and Regional Ambitions</h2>
+
+  <p class="reveal">A key differentiator in the selected solution is the embedded AI capability within the SAP platform. Teyseer Motors will leverage AI-assisted tools for:</p>
+
+  <ul class="reveal">
+    <li>Predictive aftersales scheduling — anticipating service needs before customers request them</li>
+    <li>AI-driven lead scoring and sales pipeline management across all showrooms</li>
+    <li>Automated spare parts demand forecasting, reducing overstock and out-of-stock incidents</li>
+    <li>Intelligent financial close and real-time P&amp;L visibility across all brands and cost centres</li>
+  </ul>
+
+  <p class="reveal">The platform is designed with regional scalability in mind. Teyseer Motors has outlined ambitions to expand its distributor operations into additional GCC markets — a move the SAP architecture is built to support from the outset.</p>
+
+  <div class="art-pull reveal">
+    <blockquote>"Qatar's automotive sector is maturing rapidly. Operators who invest in integrated, intelligent platforms today will define the customer experience of tomorrow."</blockquote>
+    <cite>— SAP MENA Regional Director</cite>
+  </div>
+
+  <h2 class="reveal">Implementation Partners: IntelliSoft &amp; Indus Novateur</h2>
+
+  <p class="reveal">The deployment will be led by IntelliSoft and Indus Novateur as implementation partners, who will configure and roll out the autoX platform — a SAP-powered dealership management system purpose-built for the automotive distribution sector.</p>
+
+  <p class="reveal">The go-live phasing will prioritise Teyseer Motors' highest-volume operations first, with a planned full rollout across all brands within 18 months of project commencement.</p>
+
+  <h2 class="reveal">Context: Teyseer Motors' Growth Trajectory</h2>
+
+  <p class="reveal">The SAP announcement comes during a period of significant expansion for Teyseer Motors. In 2024, the company formalised an exclusive GWM distributorship for Qatar — completing GWM's full GCC footprint — and opened a flagship showroom on Airport Road that saw over 200 vehicle pre-bookings on launch day. In January 2025, it unveiled the all-new Haval H7 at the Qatar Custom Show, priced at QAR 92,900.</p>
+
+  <p class="reveal">The addition of Farizon commercial EVs in 2025 marked the group's first substantive move into electric mobility — a signal of the strategic direction that the SAP investment is designed to support.</p>
+
+  <div class="art-divider reveal"></div>
+
+  <div class="art-about reveal">
+    <div class="art-about-label">About Teyseer Motors W.L.L.</div>
+    <p>Teyseer Motors is the exclusive distributor of Suzuki (since 1970), Peugeot (since 2020), GWM (since 2024), and Farizon (since 2025) in Qatar. A subsidiary of Teyseer Group, it operates showrooms and service centres across Doha. For more information, visit <a href="https://teymotor.com" target="_blank" style="color:var(--blue)">teymotor.com</a>.</p>
+  </div>
+
+  <div class="art-tags reveal">
+    <span class="art-tag">SAP</span>
+    <span class="art-tag">Digital Transformation</span>
+    <span class="art-tag">Automotive</span>
+    <span class="art-tag">AI</span>
+    <span class="art-tag">Teyseer Motors</span>
+    <span class="art-tag">GWM</span>
+    <span class="art-tag">Qatar</span>
+  </div>
+
+</article>
+
+<!-- MEDIA DOWNLOADS -->
+<div class="art-media reveal">
+  <div class="art-media-title">Media Assets</div>
+  <div class="art-media-sub">Download press-ready assets for this announcement</div>
+  <div class="media-grid">
+    <div class="media-card" >
+      <div class="media-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+      <div>
+        <div class="media-label">Press Release</div>
+        <div class="media-sub">TXT · 1.2 KB</div>
+      </div>
+      <span class="media-dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download →</span>
+    </div>
+    <div class="media-card" >
+      <div class="media-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div>
+        <div class="media-label">High-Res Images</div>
+        <div class="media-sub">JPG · Placeholder</div>
+      </div>
+      <span class="media-dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download →</span>
+    </div>
+    <div class="media-card" >
+      <div class="media-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"/></svg></div>
+      <div>
+        <div class="media-label">Company Boilerplate</div>
+        <div class="media-sub">TXT · 0.8 KB</div>
+      </div>
+      <span class="media-dl"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download →</span>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED ARTICLES -->
+<div style="max-width:900px;margin:0 auto;padding:48px 40px 64px;border-top:2px solid var(--line)">
+  <h2 style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--blue-dark);margin-bottom:28px;letter-spacing:-0.01em">Related News</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line)">
+
+    <div style="background:var(--paper);display:flex;flex-direction:column">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);display:flex;align-items:center;justify-content:center">
+        <span style="font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:.12em;text-transform:uppercase">[Image Placeholder]</span>
+      </div>
+      <div style="padding:20px;flex:1;display:flex;flex-direction:column">
+        <span style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:3px 8px;border-radius:2px;display:inline-flex;margin-bottom:10px;align-self:flex-start">Partnership · Jan 2024</span>
+        <div style="font-size:14px;font-weight:700;color:var(--blue-dark);line-height:1.3;margin-bottom:8px;flex:1">GWM Exclusive Distributorship Agreement Signed — Qatar Market Complete</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px">Teyseer Motors formalised a landmark distributorship agreement with Great Wall Motor.</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;justify-content:space-between">
+          <span>Gulf Times</span><span style="color:var(--blue)">Read →</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--paper);display:flex;flex-direction:column">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);display:flex;align-items:center;justify-content:center">
+        <span style="font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:.12em;text-transform:uppercase">[Image Placeholder]</span>
+      </div>
+      <div style="padding:20px;flex:1;display:flex;flex-direction:column">
+        <span style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:3px 8px;border-radius:2px;display:inline-flex;margin-bottom:10px;align-self:flex-start">Automotive · Jan 2025</span>
+        <div style="font-size:14px;font-weight:700;color:var(--blue-dark);line-height:1.3;margin-bottom:8px;flex:1">Haval H7 Unveiled at Qatar Custom Show — QAR 92,900</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px">Teyseer Motors unveiled the all-new Haval H7, expanding the GWM lineup alongside Tank 500 and Tank 300.</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;justify-content:space-between">
+          <span>Qatar Tribune</span><span style="color:var(--blue)">Read →</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--paper);display:flex;flex-direction:column">
+      <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,var(--sky-soft) 0,var(--sky-soft) 14px,var(--paper) 14px,var(--paper) 28px);display:flex;align-items:center;justify-content:center">
+        <span style="font-family:var(--mono);font-size:9px;color:var(--steel);letter-spacing:.12em;text-transform:uppercase">[Image Placeholder]</span>
+      </div>
+      <div style="padding:20px;flex:1;display:flex;flex-direction:column">
+        <span style="font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--sky-soft);padding:3px 8px;border-radius:2px;display:inline-flex;margin-bottom:10px;align-self:flex-start">Partnership · Feb 2026</span>
+        <div style="font-size:14px;font-weight:700;color:var(--blue-dark);line-height:1.3;margin-bottom:8px;flex:1">Dukhan Bank &amp; Teyseer Group Sign MoU for Integrated Banking &amp; Technology Solutions</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px">A landmark MoU exploring bundled IT infrastructure and Sharia-compliant financing for SMEs.</div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;justify-content:space-between">
+          <span>Gulf Times</span><span style="color:var(--blue)">Read →</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-in">
+    <h2 class="cta-h2">Stay Updated With Teyseer Group.</h2>
+    <div class="cta-btns">
+      <span class="cta-btn-pri" style="cursor:default">Back to Newsroom →</span>
+      <span class="cta-btn-sec" style="cursor:default">Contact Media →</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#2A3C8E;color:#fff;font-family:system-ui,sans-serif;display:block">
+  <div style="max-width:1320px;margin:0 auto;padding:60px 40px 56px;display:flex;align-items:flex-start;gap:0">
+    <div style="flex:0 0 340px;padding-right:40px">
+      <img src="img/teyseer-logo-full.png" alt="Teyseer" style="height:50px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:14px" />
+      <p style="font-size:13px;color:rgba(255,255,255,0.38);line-height:1.7;max-width:240px;margin:0">Building excellence since 1968. A trusted leader in automotive, technology, and national development.</p>
+    </div>
+    <div style="flex:1"></div>
+    <div style="flex:0 0 190px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Company</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">About Us</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Our Companies</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">News</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Careers</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Contact</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 220px;padding-right:32px">
+      <p style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.75);margin:0 0 20px 0">Sectors</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Automotive &amp; Mobility</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Industrial &amp; Construction</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Security &amp; Manpower</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Energy</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Technology &amp; IT</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Infrastructure &amp; Materials</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Hospitality &amp; Facility Management</a></li>
+      </ul>
+    </div>
+    <div style="flex:0 0 180px">
+      <p style="font-size:14px;font-weight:700;color:#fff;margin:0 0 20px 0">Contact Us</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px">
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">Request a Quote</a></li>
+        <li><a href="#" style="font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none">General Contact Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);margin:0 40px"></div>
+  <div style="max-width:1320px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:0">
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Copyright</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Privacy Policy</a>
+      <span style="color:rgba(255,255,255,0.25);margin:0 9px">/</span>
+      <a href="#" style="font-size:13px;font-weight:600;color:#fff;text-decoration:none">Terms</a>
+    </div>
+    <span style="font-size:13px;color:rgba(255,255,255,0.32)">Copyright and printing rights 2026. Teyseer Group. All rights reserved</span>
+    <div style="display:flex;gap:8px">
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:rgba(255,255,255,0.6)"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+    </div>
+  </div>
+</footer>
+
+<!-- SHARE SHEET -->
+<div class="share-overlay" id="shareOverlay" onclick="if(event.target===this)closeShare()">
+  <div class="share-sheet">
+    <div style="font-size:14px;font-weight:700;color:var(--blue-dark);margin-bottom:6px">Share this article</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5">Teyseer Motors Selects SAP for AI-Driven Digital Transformation</div>
+    <div class="share-options">
+      <div class="share-opt" onclick="shareVia('linkedin')"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span></div>
+      <div class="share-opt" onclick="shareVia('twitter')"><svg viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg><span>Twitter/X</span></div>
+      <div class="share-opt" onclick="shareVia('whatsapp')"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>WhatsApp</span></div>
+      <div class="share-opt" onclick="shareVia('email')"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email</span></div>
+    </div>
+    <div class="share-link-row">
+      <input class="share-link-input" id="shareLinkInput" type="text" readonly value="https://teyseergroup.com/newsroom/sap-digital-transformation-2026" />
+      <button class="share-copy" id="shareCopyBtn" onclick="copyLink()">Copy Link</button>
+    </div>
+    <button class="share-close" onclick="closeShare()">Close</button>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56"><rect width="80" height="14" fill="#2A3C8E"/><text x="4" y="9" font-family="sans-serif" font-size="5" fill="white">Teyseer Newsroom</text><rect y="14" width="80" height="42" fill="#F4F3EF"/><rect x="4" y="18" width="50" height="6" rx="1" fill="#2A3C8E" opacity="0.8"/><rect x="4" y="27" width="72" height="2" rx="1" fill="#DAD8D0"/><rect x="4" y="32" width="68" height="2" rx="1" fill="#DAD8D0"/><rect x="4" y="37" width="60" height="2" rx="1" fill="#DAD8D0"/><rect x="4" y="44" width="24" height="7" rx="1" fill="#2A3C8E" opacity="0.4"/></svg></template>
+
+<script>
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrollTop = window.scrollY;
+  const scrollHeight = doc.scrollHeight - doc.clientHeight;
+  const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  const fill = document.getElementById('progressFill');
+  if (fill) fill.style.width = progress + '%';
+}, { passive: true });
+
+// Share sheet
+function openShare() {
+  document.getElementById('shareOverlay').classList.add('open');
+}
+function closeShare() {
+  document.getElementById('shareOverlay').classList.remove('open');
+}
+function copyLink() {
+  const input = document.getElementById('shareLinkInput');
+  navigator.clipboard.writeText(input.value).then(() => {
+    document.getElementById('shareCopyBtn').textContent = '✓ Copied!';
+    setTimeout(() => document.getElementById('shareCopyBtn').textContent = 'Copy Link', 2000);
+  }).catch(() => { input.select(); document.execCommand('copy'); });
+}
+function shareVia(platform) {
+  const url = encodeURIComponent(document.getElementById('shareLinkInput').value);
+  const text = encodeURIComponent('Teyseer Motors Selects SAP for AI-Driven Digital Transformation');
+  const links = {
+    linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
+    twitter: 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text,
+    whatsapp: 'https://wa.me/?text=' + text + '%20' + url,
+    email: 'mailto:?subject=' + text + '&body=' + text + '%0A%0A' + url
+  };
+  window.open(links[platform], '_blank', 'noopener');
+}
+
+// Download
+function downloadArticle() {
+  const content = `TEYSEER GROUP NEWSROOM — PRESS RELEASE\n${'='.repeat(70)}\n\nTeyseer Motors Selects SAP for AI-Driven Digital Transformation\nCategory: Technology · Date: May 2026\nSource: SAP MENA · Channel Post MEA · GEC Newswire\n\n${'─'.repeat(70)}\n\nDoha, Qatar — May 2026. Teyseer Motors W.L.L., one of Qatar's leading automotive distributors and a subsidiary of Teyseer Group, has selected SAP to deploy a comprehensive, AI-enabled dealership management platform across its entire brand portfolio.\n\nThe implementation will unify all core business functions — from pre-sales enquiries and vehicle configuration to sales contracts, aftersales service, spare parts management, warranty processing, and financial operations — into a single, integrated technology backbone powered by SAP S/4HANA.\n\nKey Features:\n- Predictive aftersales scheduling\n- AI-driven lead scoring and sales pipeline management\n- Automated spare parts demand forecasting\n- Intelligent financial close and real-time P&L visibility\n\nImplementation Partners: IntelliSoft & Indus Novateur (autoX platform)\n\nOriginal source: https://gecnewswire.com/teyseer-motors-adopts-sap-to-drive-ai-powered-growth-in-qatar/\n\n${'─'.repeat(70)}\nMedia Contact: info@teyseergroup.com\n© 2025 Teyseer Holding W.L.L.`;
+  const blob = new Blob([content], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Teyseer-Motors-SAP-Press-Release.txt';
+  a.click();
+}
+
+function downloadAsset(type) {
+  const assets = {
+    'press-release': { name: 'Teyseer-SAP-Press-Release.txt', content: 'PRESS RELEASE\n\nTeyseer Motors Selects SAP for AI-Driven Digital Transformation\n\nFor the full release, contact info@teyseergroup.com' },
+    'images': { name: 'Teyseer-SAP-Images-Request.txt', content: 'IMAGE REQUEST\n\nHigh-resolution images for the Teyseer Motors SAP partnership announcement are available on request.\n\nContact: info@teyseergroup.com' },
+    'boilerplate': { name: 'Teyseer-Group-Boilerplate.txt', content: 'ABOUT TEYSEER GROUP\n\nTeyseer Group is one of Qatar\'s most diversified holding companies, founded in 1968. With 18 subsidiaries and over 10,000 employees, the Group operates across five verticals: Automotive, IT, Contracting, Manufacturing, and Facility Management.\n\nFor more information: teyseergroup.com\nMedia contact: info@teyseergroup.com' }
+  };
+  const asset = assets[type];
+  if (!asset) return;
+  const blob = new Blob([asset.content], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = asset.name;
+  a.click();
+}
+
+// Reveal
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} }), { threshold: 0.05 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
